@@ -32,7 +32,7 @@ namespace BookMgr
         {
             return command(sql).ExecuteReader();
         }
-        public void DaoClose()
+        public void Close()
         {
             sc.Close();
         }

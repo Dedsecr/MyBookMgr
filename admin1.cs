@@ -21,5 +21,11 @@ namespace BookMgr
         {
 
         }
+
+        private void 图书管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            admin2 admin = new admin2();
+            admin.ShowDialog();
+        }
     }
 }

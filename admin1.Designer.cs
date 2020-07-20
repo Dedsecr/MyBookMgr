@@ -58,6 +58,7 @@
             this.图书管理ToolStripMenuItem.Name = "图书管理ToolStripMenuItem";
             this.图书管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.图书管理ToolStripMenuItem.Text = "图书管理";
+            this.图书管理ToolStripMenuItem.Click += new System.EventHandler(this.图书管理ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 

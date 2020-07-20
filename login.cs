@@ -59,10 +59,6 @@ namespace BookMgr
                 IDataReader dc = dao.read(sql);
                 if (dc.Read())
                 {
-
-                    Data.UID = dc["id"].ToString();
-                    Data.UName = dc["name"].ToString();
-
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
                     MessageBox.Show("登陆成功！");
 
@@ -75,7 +71,7 @@ namespace BookMgr
                 {
                     MessageBox.Show("登陆失败！");
                 }
-                dao.DaoClose();
+                dao.Close();
             }
             else if(radioButtonUser.Checked==true)
             {
@@ -85,6 +81,10 @@ namespace BookMgr
                 IDataReader dc = dao.read(sql);
                 if(dc.Read())
                 {
+
+                    Data.UID = dc["id"].ToString();
+                    Data.UName = dc["name"].ToString();
+
                     MessageBox.Show("登陆成功！");
 
                     user1 user = new user1();
@@ -97,7 +97,8 @@ namespace BookMgr
                 {
                     MessageBox.Show("登陆失败！");
                 }
-                dao.DaoClose();
+                dao.Close();
+                dc.Close();
             }
         }
     }
