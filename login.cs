@@ -51,55 +51,50 @@ namespace BookMgr
         //验证是否允许登录
         public void Login()
         {
-            if(radioButtonAdmin.Checked==true)
+            Dao dao = new Dao();
+            string sql = "";
+            if (radioButtonAdmin.Checked == true)
             {
-                Dao dao = new Dao();
-                string sql = $"select * from t_admin where id='{textBoxID.Text}' and pw='{textBoxpw.Text}'";
-                //MessageBox.Show(sql);
+                sql = $"select * from t_admin where id='{textBoxID.Text}' and pw='{textBoxpw.Text}'";
+            }
+            else if (radioButtonUser.Checked == true)
+            {
+                sql = $"select * from t_user where id='{textBoxID.Text}' and pw='{textBoxpw.Text}'";
+            }
+            try
+            {
                 IDataReader dc = dao.read(sql);
                 if (dc.Read())
                 {
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
-                    MessageBox.Show("登陆成功！");
+                    MessageBox.Show("登陆成功！", "登陆失败", MessageBoxButtons.OK);
                     this.Close();
-                    admin1 admin = new admin1();
-                    //this.Hide();
-                    admin.ShowDialog();
-                    //this.Show();
+
+                    if (radioButtonAdmin.Checked == true)
+                    {
+                        admin1 admin = new admin1();
+                        admin.ShowDialog();
+                    }
+                    else if (radioButtonUser.Checked == true)
+                    {
+                        user1 user = new user1();
+                        //this.Hide();
+                        user.ShowDialog();
+                        //this.Show();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("登陆失败！");
+                    MessageBox.Show("登陆失败！请检查用户名、密码和登陆身份。", "登陆失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                dao.Close();
-            }
-            else if(radioButtonUser.Checked==true)
-            {
-                Dao dao = new Dao();
-                string sql = $"select * from t_user where id='{textBoxID.Text}' and pw='{textBoxpw.Text}'";
-                //MessageBox.Show(sql);
-                IDataReader dc = dao.read(sql);
-                if(dc.Read())
-                {
-
-                    Data.UID = dc["id"].ToString();
-                    Data.UName = dc["name"].ToString();
-
-                    MessageBox.Show("登陆成功！");
-                    this.Close();
-                    user1 user = new user1();
-                    //this.Hide();
-                    user.ShowDialog();
-                    //this.Show();
-
-                }
-                else
-                {
-                    MessageBox.Show("登陆失败！");
-                }
-                dao.Close();
                 dc.Close();
+                dao.Close();
             }
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
