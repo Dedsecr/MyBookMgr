@@ -85,8 +85,10 @@
             this.textBoxpw.Font = new System.Drawing.Font("宋体", 13F);
             this.textBoxpw.Location = new System.Drawing.Point(228, 183);
             this.textBoxpw.Name = "textBoxpw";
+            this.textBoxpw.PasswordChar = '*';
             this.textBoxpw.Size = new System.Drawing.Size(141, 27);
             this.textBoxpw.TabIndex = 4;
+            this.textBoxpw.TextChanged += new System.EventHandler(this.textBoxpw_TextChanged);
             // 
             // button1
             // 

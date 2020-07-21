@@ -33,5 +33,10 @@ namespace BookMgr
             user3 user = new user3();
             user.ShowDialog();
         }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -15,6 +15,58 @@ namespace BookMgr
         public user3()
         {
             InitializeComponent();
+            Table();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();//获取书号
+                string no = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dr = MessageBox.Show("确认归还？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {
+                    string sql = $"delete from t_lend where [no]={no};update t_book set number=number+1 where id='{id}'";
+                    Dao dao = new Dao();
+                    if (dao.Execute(sql) > 1)
+                    {
+                        MessageBox.Show($"用户{Data.UName}归还图书{id}成功！");
+                        Table();
+                    }
+                    else
+                    {
+                        MessageBox.Show("归还失败，请联系管理员处理！");
+                    }
+                    dao.Close();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("请在表格选中要借出的图书！", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+        public void Table()
+        {
+            dataGridView1.Rows.Clear();//清空旧数据
+            Dao dao = new Dao();
+            string sql = $"select [no],[bid],[datetime] from t_lend where [uid]='{Data.UID}'";
+            IDataReader dc = dao.read(sql);
+            while (dc.Read())
+            {
+                dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString());
+            }
+            dc.Close();
+            dao.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Table();
         }
     }
 }

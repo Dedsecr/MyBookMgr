@@ -74,25 +74,21 @@ namespace BookMgr
             try
             {
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();//获取书号
-                string name = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                string author = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-                string press = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
                 int number = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
                 if(number == 0)
                 {
-                    MessageBox.Show("图书数量不足", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("图书数量不足，请联系管理人员购入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     DialogResult dr = MessageBox.Show("确认借出？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.OK)
                     {
-                        number--;
-                        string sql = $"update t_book set id='{id}',[name]='{name}',author='{author}',press='{press}',number={number.ToString()} where id='{id}'";
+                        string sql = $"insert into t_lend ([uid],[bid],[datetime]) values('{Data.UID}','{id}',GETDATE());update t_book set number=number-1 where id='{id}'";
                         Dao dao = new Dao();
-                        if (dao.Execute(sql) > 0)
+                        if (dao.Execute(sql) > 1)
                         {
-                            MessageBox.Show("借出成功！");
+                            MessageBox.Show($"用户{Data.UName}借出图书{id}成功！");
                             Table();
                         }
                         else

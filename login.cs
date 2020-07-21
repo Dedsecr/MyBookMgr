@@ -67,16 +67,20 @@ namespace BookMgr
                 if (dc.Read())
                 {
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
-                    MessageBox.Show("登陆成功！", "登陆失败", MessageBoxButtons.OK);
+                    MessageBox.Show("登陆成功！", "", MessageBoxButtons.OK);
                     this.Hide();
                     if (radioButtonAdmin.Checked == true)
                     {
                         admin1 admin = new admin1();
+                        Data.UID = textBoxID.Text;
+                        Data.UName = "管理员";
                         admin.ShowDialog();
                     }
                     else if (radioButtonUser.Checked == true)
                     {
                         user1 user = new user1();
+                        Data.UID = textBoxID.Text;
+                        Data.UName = dc[1].ToString();
                         //this.Hide();
                         user.ShowDialog();
                         //this.Show();
@@ -93,6 +97,11 @@ namespace BookMgr
             {
                 MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void textBoxpw_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
