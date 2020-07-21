@@ -22,7 +22,7 @@ namespace BookMgr
         public SqlCommand command(string sql)
         {
             SqlCommand cmd = new SqlCommand(sql, connect());
-            return cmd;
+             return cmd;
         }
         public int Execute(string sql)
         {

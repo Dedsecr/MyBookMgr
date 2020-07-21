@@ -21,5 +21,17 @@ namespace BookMgr
         {
 
         }
+
+        private void 图书查看与借阅ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            user2 user = new user2();
+            user.ShowDialog();
+        }
+
+        private void 我的图书与归还ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            user3 user = new user3();
+            user.ShowDialog();
+        }
     }
 }

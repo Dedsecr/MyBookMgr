@@ -33,13 +33,17 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.联系管理员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.图书查看与借阅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.我的图书与归还ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.系统ToolStripMenuItem});
+            this.系统ToolStripMenuItem,
+            this.图书查看与借阅ToolStripMenuItem,
+            this.我的图书与归还ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -60,20 +64,34 @@
             // 帮助ToolStripMenuItem
             // 
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 联系管理员ToolStripMenuItem
             // 
             this.联系管理员ToolStripMenuItem.Name = "联系管理员ToolStripMenuItem";
-            this.联系管理员ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.联系管理员ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.联系管理员ToolStripMenuItem.Text = "联系管理员";
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.退出ToolStripMenuItem.Text = "退出";
+            // 
+            // 图书查看与借阅ToolStripMenuItem
+            // 
+            this.图书查看与借阅ToolStripMenuItem.Name = "图书查看与借阅ToolStripMenuItem";
+            this.图书查看与借阅ToolStripMenuItem.Size = new System.Drawing.Size(104, 21);
+            this.图书查看与借阅ToolStripMenuItem.Text = "图书查看与借阅";
+            this.图书查看与借阅ToolStripMenuItem.Click += new System.EventHandler(this.图书查看与借阅ToolStripMenuItem_Click);
+            // 
+            // 我的图书与归还ToolStripMenuItem
+            // 
+            this.我的图书与归还ToolStripMenuItem.Name = "我的图书与归还ToolStripMenuItem";
+            this.我的图书与归还ToolStripMenuItem.Size = new System.Drawing.Size(104, 21);
+            this.我的图书与归还ToolStripMenuItem.Text = "我的图书与归还";
+            this.我的图书与归还ToolStripMenuItem.Click += new System.EventHandler(this.我的图书与归还ToolStripMenuItem_Click);
             // 
             // user1
             // 
@@ -98,5 +116,7 @@
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 联系管理员ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 图书查看与借阅ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 我的图书与归还ToolStripMenuItem;
     }
 }

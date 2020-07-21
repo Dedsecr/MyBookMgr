@@ -68,8 +68,7 @@ namespace BookMgr
                 {
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
                     MessageBox.Show("登陆成功！", "登陆失败", MessageBoxButtons.OK);
-                    this.Close();
-
+                    this.Hide();
                     if (radioButtonAdmin.Checked == true)
                     {
                         admin1 admin = new admin1();
