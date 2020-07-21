@@ -30,7 +30,7 @@ namespace BookMgr
         private void button2_Click(object sender, EventArgs e)
         {
             regist re = new regist();
-            re.Show();
+            re.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
