@@ -35,6 +35,7 @@
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.图书查看与借阅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.我的图书与归还ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,15 +95,26 @@
             this.我的图书与归还ToolStripMenuItem.Text = "我的图书与归还";
             this.我的图书与归还ToolStripMenuItem.Click += new System.EventHandler(this.我的图书与归还ToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("隶书", 30F);
+            this.label1.Location = new System.Drawing.Point(267, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 40);
+            this.label1.TabIndex = 1;
+            // 
             // user1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "user1";
             this.Text = "用户主界面";
+            this.Load += new System.EventHandler(this.user1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 图书查看与借阅ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 我的图书与归还ToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }

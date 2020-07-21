@@ -29,7 +29,7 @@ namespace BookMgr
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -71,16 +71,16 @@ namespace BookMgr
                     this.Hide();
                     if (radioButtonAdmin.Checked == true)
                     {
-                        admin1 admin = new admin1();
                         Data.UID = textBoxID.Text;
                         Data.UName = "管理员";
+                        admin1 admin = new admin1();
                         admin.ShowDialog();
                     }
                     else if (radioButtonUser.Checked == true)
                     {
-                        user1 user = new user1();
                         Data.UID = textBoxID.Text;
                         Data.UName = dc[1].ToString();
+                        user1 user = new user1();
                         //this.Hide();
                         user.ShowDialog();
                         //this.Show();
@@ -100,9 +100,20 @@ namespace BookMgr
 
         }
 
-        private void textBoxpw_TextChanged(object sender, EventArgs e)
+        private void textBoxpw_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == 13)//回车键登录
+            {
+                if (textBoxID.Text != "" && textBoxpw.Text != "")
+                {
+                    Login();
+                }
+                else
+                {
+                    MessageBox.Show("输入有空项，请重新输入！");
+                }
 
+            }
         }
     }
 }

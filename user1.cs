@@ -15,6 +15,7 @@ namespace BookMgr
         public user1()
         {
             InitializeComponent();
+            label1.Text = $"欢迎{Data.UName}登录";
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -37,6 +38,11 @@ namespace BookMgr
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void user1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
