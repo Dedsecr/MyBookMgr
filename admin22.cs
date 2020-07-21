@@ -38,14 +38,20 @@ namespace BookMgr
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = $"update t_book set id='{textBox1.Text}',[name]='{textBox2.Text}',author='{textBox3.Text}',press='{textBox4.Text}',number={textBox5.Text} where id='{Id}'";
-            Dao dao = new Dao();
-            if(dao.Execute(sql) > 0)
+            try
             {
-                MessageBox.Show("修改成功！");
-                this.Close();
+                string sql = $"update t_book set id='{textBox1.Text}',[name]='{textBox2.Text}',author='{textBox3.Text}',press='{textBox4.Text}',number={textBox5.Text} where id='{Id}'";
+                Dao dao = new Dao();
+                if (dao.Execute(sql) > 0)
+                {
+                    MessageBox.Show("修改成功！");
+                    this.Close();
+                }
             }
-
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

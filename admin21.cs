@@ -35,18 +35,25 @@ namespace BookMgr
             }
             else
             {
-                Dao dao = new Dao();
-                string sql = $"insert into t_book values('{textBox1.Text}','{textBox2.Text}','{textBox3.Text}','{textBox4.Text}',{textBox5.Text})";
-                int n = dao.Execute(sql);
-                if (n > 0)
+                try
                 {
-                    MessageBox.Show("添加成功！");
+                    Dao dao = new Dao();
+                    string sql = $"insert into t_book values('{textBox1.Text}','{textBox2.Text}','{textBox3.Text}','{textBox4.Text}',{textBox5.Text})";
+                    int n = dao.Execute(sql);
+                    if (n > 0)
+                    {
+                        MessageBox.Show("添加成功！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("添加失败！");
+                    }
+                    textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("添加失败！");
+                    MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
             }
 
         }

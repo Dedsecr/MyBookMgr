@@ -44,5 +44,12 @@ namespace BookMgr
         {
 
         }
+
+        private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("请联系xyu.shi@outlook.com");
+        }
+
+
     }
 }

@@ -29,7 +29,8 @@ namespace BookMgr
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            regist re = new regist();
+            re.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace BookMgr
                 if (dc.Read())
                 {
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
-                    MessageBox.Show("登陆成功！", "", MessageBoxButtons.OK);
+                    //MessageBox.Show("登陆成功！", "", MessageBoxButtons.OK);
                     this.Hide();
                     if (radioButtonAdmin.Checked == true)
                     {
@@ -85,6 +86,7 @@ namespace BookMgr
                         user.ShowDialog();
                         //this.Show();
                     }
+                    this.Close();
                 }
                 else
                 {

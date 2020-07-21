@@ -27,5 +27,15 @@ namespace BookMgr
             admin2 admin = new admin2();
             admin.ShowDialog();
         }
+
+        private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("请联系xyu.shi@outlook.com");
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -67,9 +67,9 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(121, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 27);
+            this.label3.Size = new System.Drawing.Size(90, 27);
             this.label3.TabIndex = 2;
-            this.label3.Text = "密  码：";
+            this.label3.Text = "密   码：";
             // 
             // textBoxID
             // 
@@ -108,7 +108,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 35);
             this.button2.TabIndex = 6;
-            this.button2.Text = "取消";
+            this.button2.Text = "注册";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

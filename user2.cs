@@ -20,60 +20,99 @@ namespace BookMgr
 
         private void user2_Load(object sender, EventArgs e)
         {
-            label2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + " ";
-            label2.Text += dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                label2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + " ";
+                label2.Text += dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         //从数据库读取数据显示在表格控件之中
         public void Table()
         {
-            dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = "select * from t_book";
-            IDataReader dc = dao.read(sql);
-            while (dc.Read())
+            try
             {
-                dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                dataGridView1.Rows.Clear();//清空旧数据
+                Dao dao = new Dao();
+                string sql = "select * from t_book";
+                IDataReader dc = dao.read(sql);
+                while (dc.Read())
+                {
+                    dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                }
+                dc.Close();
+                dao.Close();
             }
-            dc.Close();
-            dao.Close();
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //根据书号显示数据
         public void TableID()
         {
-            dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = $"select * from t_book where id='{textBox1.Text.ToString()}'";
-            IDataReader dc = dao.read(sql);
-            while (dc.Read())
+            try
             {
-                dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                dataGridView1.Rows.Clear();//清空旧数据
+                Dao dao = new Dao();
+                string sql = $"select * from t_book where id='{textBox1.Text.ToString()}'";
+                IDataReader dc = dao.read(sql);
+                while (dc.Read())
+                {
+                    dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                }
+                dc.Close();
+                dao.Close();
             }
-            dc.Close();
-            dao.Close();
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //根据书名显示数据
         public void TableName()
         {
-            dataGridView1.Rows.Clear();//清空旧数据
-            Dao dao = new Dao();
-            string sql = $"select * from t_book where name like '%{textBox2.Text.ToString()}%'";
-            IDataReader dc = dao.read(sql);
-            while (dc.Read())
+            try
             {
-                dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                dataGridView1.Rows.Clear();//清空旧数据
+                Dao dao = new Dao();
+                string sql = $"select * from t_book where name like '%{textBox2.Text.ToString()}%'";
+                IDataReader dc = dao.read(sql);
+                while (dc.Read())
+                {
+                    dataGridView1.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
+                }
+                dc.Close();
+                dao.Close();
             }
-            dc.Close();
-            dao.Close();
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         //借出图书
         private void button1_Click(object sender, EventArgs e)
         {
+            string id = "";
             try
             {
-                string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();//获取书号
+                id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();//获取书号
+            }
+            catch
+            {
+                MessageBox.Show("请在表格选中要借出的图书！", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
                 int number = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
                 if(number == 0)
                 {
@@ -98,14 +137,11 @@ namespace BookMgr
                         dao.Close();
                     }
                 }
-               
             }
             catch
             {
-                MessageBox.Show("请在表格选中要借出的图书！", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -164,8 +200,15 @@ namespace BookMgr
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            label2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + " ";
-            label2.Text += dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                label2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + " ";
+                label2.Text += dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("无法连接到服务器，请稍后再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }
