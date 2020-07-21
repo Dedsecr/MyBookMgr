@@ -20,7 +20,8 @@ namespace BookMgr
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            admin21 admin = new admin21();
+            admin.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)

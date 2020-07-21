@@ -62,6 +62,12 @@
     <Compile Include="admin2.Designer.cs">
       <DependentUpon>admin2.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin21.Designer.cs">
+      <DependentUpon>admin21.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="login.cs">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin2.resx">
       <DependentUpon>admin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin21.resx">
+      <DependentUpon>admin21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

@@ -13,7 +13,7 @@ namespace BookMgr
         SqlConnection sc;
         public SqlConnection connect()
         {
-            string str = @"server=DEDSECR-S;database=BookDB;Trusted_Connection=SSPI";
+            string str = @"server=Dedsec;database=BookDB;Trusted_Connection=SSPI";
             //string str = @"Data Soure=DEDSECR-S;Initial Catalog=BookDB;Intergrated Security=True";
             sc = new SqlConnection(str);
             sc.Open();

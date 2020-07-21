@@ -96,7 +96,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button1.Location = new System.Drawing.Point(766, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 40);
@@ -107,7 +107,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button2.Location = new System.Drawing.Point(933, 324);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 35);
@@ -118,7 +118,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button3.Location = new System.Drawing.Point(933, 263);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 35);
@@ -129,7 +129,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button4.Location = new System.Drawing.Point(933, 156);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 40);
@@ -140,7 +140,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button5.Location = new System.Drawing.Point(766, 156);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(91, 40);
@@ -151,7 +151,7 @@
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("等距更纱黑体 SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button6.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.button6.Location = new System.Drawing.Point(933, 68);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(91, 40);
@@ -162,18 +162,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.textBox1.Location = new System.Drawing.Point(766, 269);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 26);
+            this.textBox1.Size = new System.Drawing.Size(147, 29);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 12F);
+            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.textBox2.Location = new System.Drawing.Point(766, 330);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 26);
+            this.textBox2.Size = new System.Drawing.Size(147, 29);
             this.textBox2.TabIndex = 8;
             // 
             // admin2
