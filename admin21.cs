@@ -50,5 +50,16 @@ namespace BookMgr
             }
 
         }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b')//允许输入退格键 
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//允许输入0-9数字 
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

@@ -61,11 +61,11 @@ namespace BookMgr
                 {
                     //MessageBox.Show(dc[0].ToString() + dc["name"].ToString());
                     MessageBox.Show("登陆成功！");
-
+                    this.Close();
                     admin1 admin = new admin1();
-                    this.Hide();
+                    //this.Hide();
                     admin.ShowDialog();
-                    this.Show();
+                    //this.Show();
                 }
                 else
                 {
@@ -86,11 +86,11 @@ namespace BookMgr
                     Data.UName = dc["name"].ToString();
 
                     MessageBox.Show("登陆成功！");
-
+                    this.Close();
                     user1 user = new user1();
-                    this.Hide();
+                    //this.Hide();
                     user.ShowDialog();
-                    this.Show();
+                    //this.Show();
 
                 }
                 else
